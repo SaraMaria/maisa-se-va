@@ -916,6 +916,26 @@ function updateCounter(){
 
   const seconds =
     totalSeconds % 60;
+  const totalTime =
+  releaseDate.getTime() - startDate.getTime();
+
+const elapsedTime =
+  now.getTime() - startDate.getTime();
+
+const progress =
+  Math.min(
+    100,
+    Math.max(
+      0,
+      (elapsedTime / totalTime) * 100
+    )
+  );
+
+document.getElementById('progressFill').style.width =
+  progress + '%';
+
+document.getElementById('progressText').textContent =
+  Math.floor(progress) + '%';
 
   document.getElementById('days').textContent =
     String(days).padStart(2,'0');
