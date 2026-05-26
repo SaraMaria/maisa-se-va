@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+<meta name="description" content="Una sorpresa especial para Maisa ✈️🇦🇷🇪🇸"/>
 <title>¡Maisa se va! ✈️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -12,7 +11,6 @@
 <style>
 
 /* RESET */
-
 *{
   margin:0;
   padding:0;
@@ -26,39 +24,36 @@ html,body{
   background:#f5f0e8;
 }
 
-/* BACKGROUND ARG */
+/* BACKGROUNDS */
 
 #bgArg{
   position:fixed;
   inset:0;
   z-index:0;
-  background:#f5f0e8;
-  transition:opacity 2s ease;
+  background-color:#f5f0e8;
+  transition:opacity 2.5s ease;
 }
 
 #bgArg::before{
   content:'';
   position:absolute;
   inset:0;
-
   background-image:
     repeating-linear-gradient(
       90deg,
-      rgba(116,172,223,.35) 0,
-      rgba(116,172,223,.35) 60px,
-      transparent 60px,
-      transparent 120px
+      rgba(116,172,223,.42) 0,
+      rgba(116,172,223,.42) 50px,
+      transparent 50px,
+      transparent 100px
     ),
     repeating-linear-gradient(
       180deg,
-      rgba(116,172,223,.35) 0,
-      rgba(116,172,223,.35) 60px,
-      transparent 60px,
-      transparent 120px
+      rgba(116,172,223,.42) 0,
+      rgba(116,172,223,.42) 50px,
+      transparent 50px,
+      transparent 100px
     );
 }
-
-/* BACKGROUND ESP */
 
 #bgEsp{
   position:fixed;
@@ -68,7 +63,7 @@ html,body{
   flex-direction:column;
   opacity:0;
   pointer-events:none;
-  transition:opacity 2s ease;
+  transition:opacity 2.5s ease;
 }
 
 #bgEsp .r{
@@ -81,105 +76,108 @@ html,body{
   background:#ffc400;
 }
 
-/* PAGE */
+/* LAYOUT */
 
 .page{
   position:relative;
   z-index:10;
-  min-height:100vh;
   display:flex;
   flex-direction:column;
   align-items:center;
-  text-align:center;
+  min-height:100vh;
   padding:2rem 1rem 3rem;
+  text-align:center;
+  max-width:900px;
+  margin:0 auto;
 }
 
 /* HEADER */
 
-.flags{
+.flags-row{
   display:flex;
   align-items:center;
-  gap:1rem;
-  font-size:2.3rem;
-  margin-bottom:1rem;
+  gap:.8rem;
+  font-size:clamp(1.8rem,5vw,2.5rem);
+  margin-bottom:.5rem;
 }
 
-.arrow{
-  animation:pulse 1.4s infinite;
+.arr{
+  animation:pulse 1.5s infinite;
 }
 
 @keyframes pulse{
-  0%,100%{opacity:.4;}
+  0%,100%{opacity:.5;}
   50%{opacity:1;}
 }
 
 h1{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.3rem,7vw,4.5rem);
-  color:#17345f;
+  font-size:clamp(2.2rem,7vw,4rem);
+  color:#16335f;
+  margin-bottom:.2rem;
 }
 
 .subtitle{
   font-family:'Cormorant Garamond',serif;
   font-style:italic;
-  font-size:1.2rem;
-  color:#17345f;
-  margin-bottom:2rem;
+  font-size:clamp(1rem,3vw,1.3rem);
+  color:#16335f;
+  opacity:.8;
+  margin-bottom:1rem;
 }
 
 /* COUNTER */
 
-.counter{
+.counter-wrap{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:1rem;
   width:100%;
-  max-width:760px;
-  margin-bottom:1.3rem;
+  max-width:650px;
+  margin-bottom:1rem;
 }
 
-.box{
-  background:rgba(255,255,255,.72);
+.cbox{
+  background:rgba(255,255,255,.75);
+  border-radius:22px;
+  padding:1rem;
+  backdrop-filter:blur(10px);
   border:1px solid rgba(116,172,223,.3);
-  border-radius:24px;
-  padding:1.3rem 1rem;
-  backdrop-filter:blur(12px);
   box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-.num{
+.cnum{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.4rem,8vw,4.5rem);
+  font-size:clamp(2.2rem,7vw,4rem);
+  color:#16335f;
   font-weight:700;
-  color:#17345f;
 }
 
-.lbl{
-  margin-top:.4rem;
-  letter-spacing:.18em;
-  font-size:.7rem;
+.clbl{
   text-transform:uppercase;
-  color:#17345f;
-  opacity:.75;
+  letter-spacing:.15em;
+  font-size:.7rem;
+  margin-top:.3rem;
+  color:#16335f;
+  opacity:.7;
 }
 
 /* PROGRESS */
 
-.progress-wrap{
+.prog-wrap{
   width:100%;
-  max-width:760px;
+  max-width:650px;
   margin-bottom:1rem;
 }
 
-.progress-bg{
-  width:100%;
+.prog-bg{
   height:10px;
   background:rgba(255,255,255,.5);
   border-radius:999px;
   overflow:hidden;
 }
 
-.progress-fill{
+.prog-fill{
   height:100%;
   width:0%;
   border-radius:999px;
@@ -187,91 +185,60 @@ h1{
   transition:width 1s ease;
 }
 
-.progress-labels{
+.prog-labels{
+  margin-top:.5rem;
   display:flex;
   justify-content:space-between;
-  margin-top:.5rem;
-  color:#17345f;
-  font-size:.85rem;
-}
-
-/* DAYS */
-
-.days{
-  display:flex;
-  gap:.7rem;
-  margin-top:1rem;
-  margin-bottom:2rem;
-}
-
-.day{
-  width:64px;
-  height:64px;
-  border-radius:50%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  background:rgba(255,255,255,.7);
-  border:1px solid rgba(116,172,223,.3);
-  color:#17345f;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-
-.day.active{
-  background:#74ACDF;
-  color:white;
-}
-
-.day.final{
-  background:linear-gradient(135deg,#c60b1e,#ffc400);
-  color:white;
-}
-
-.daynum{
-  font-weight:700;
-  font-size:1.1rem;
+  font-size:.8rem;
+  color:#16335f;
 }
 
 /* MESSAGE */
 
-.message{
+.msg-card{
   width:100%;
-  max-width:760px;
-  background:rgba(255,255,255,.72);
-  border-radius:30px;
+  max-width:650px;
+  background:rgba(255,255,255,.75);
+  border-radius:28px;
   padding:2rem;
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(10px);
+  margin-bottom:1rem;
   box-shadow:0 10px 30px rgba(0,0,0,.08);
-  margin-bottom:2rem;
 }
 
-.message p{
+.msg-text{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.2rem,3vw,1.7rem);
+  font-size:clamp(1.2rem,3vw,1.5rem);
   line-height:1.8;
-  color:#17345f;
+  color:#16335f;
   font-style:italic;
 }
 
 /* SLIDESHOW */
 
-.slideshow{
+.slideshow-wrap{
   width:100%;
-  max-width:760px;
+  max-width:700px;
+  margin-bottom:1rem;
   display:none;
-  margin-bottom:2rem;
 }
 
-.slidebox{
-  position:relative;
+.slideshow-box{
   width:100%;
   aspect-ratio:4/5;
   min-height:500px;
+  border-radius:28px;
   overflow:hidden;
-  border-radius:30px;
-  background:black;
-  box-shadow:0 10px 40px rgba(0,0,0,.2);
+  position:relative;
+  background:#000;
+  box-shadow:0 10px 35px rgba(0,0,0,.18);
+}
+
+@media(max-width:500px){
+  .slideshow-box{
+    aspect-ratio:3/4;
+    min-height:420px;
+  }
 }
 
 .slide{
@@ -286,56 +253,119 @@ h1{
 }
 
 .slide img{
+  position:absolute;
+  inset:0;
   width:100%;
   height:100%;
   object-fit:contain;
   object-position:center;
-  background:black;
+  background:#000;
 }
 
-.caption{
+.slide-ov{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.1),
+    transparent
+  );
+}
+
+.slide-cap{
   position:absolute;
   bottom:0;
   width:100%;
-  padding:1.5rem;
-  background:linear-gradient(
-    to top,
-    rgba(0,0,0,.7),
-    transparent
-  );
-  color:white;
+  padding:1.2rem;
+  z-index:2;
+}
+
+.slide-cap div{
+  color:#fff;
   font-family:'Cormorant Garamond',serif;
-  font-size:1.3rem;
+  font-size:1.2rem;
   font-style:italic;
+}
+
+.slide-num{
+  position:absolute;
+  top:1rem;
+  right:1rem;
+  color:#fff;
+  z-index:3;
+  opacity:.7;
+}
+
+.slide-arrows{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:1rem;
+  z-index:5;
+}
+
+.slide-arr{
+  width:44px;
+  height:44px;
+  border:none;
+  border-radius:50%;
+  background:rgba(255,255,255,.85);
+  cursor:pointer;
+  font-size:1.4rem;
+}
+
+.slide-nav{
+  display:none;
+  justify-content:center;
+  gap:.4rem;
+  margin-top:.8rem;
+}
+
+.slide-dot{
+  width:9px;
+  height:9px;
+  border:none;
+  border-radius:50%;
+  background:rgba(0,0,0,.2);
+  cursor:pointer;
+}
+
+.slide-dot.on{
+  background:#74ACDF;
+  transform:scale(1.4);
 }
 
 /* MUSIC */
 
-.music{
+.music-bar{
   width:100%;
-  max-width:760px;
-  background:rgba(255,255,255,.72);
-  border-radius:22px;
-  padding:1rem;
+  max-width:650px;
   display:flex;
   align-items:center;
   gap:1rem;
+  padding:1rem;
+  background:rgba(255,255,255,.75);
+  border-radius:20px;
   cursor:pointer;
+  margin-bottom:1rem;
   box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-.disc{
-  width:54px;
-  height:54px;
+.mdisc{
+  width:50px;
+  height:50px;
   border-radius:50%;
+  background:linear-gradient(135deg,#74ACDF,#F6B40E);
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(135deg,#74ACDF,#F6B40E);
   animation:spin 4s linear infinite paused;
 }
 
-.disc.playing{
+.mdisc.go{
   animation-play-state:running;
 }
 
@@ -345,27 +375,32 @@ h1{
   }
 }
 
-.music-title{
-  color:#17345f;
-  font-weight:600;
+.minfo{
+  text-align:left;
 }
 
-.music-sub{
+.mttl{
+  font-weight:600;
+  color:#16335f;
+}
+
+.mart{
   font-size:.85rem;
   opacity:.7;
 }
 
 /* FOOTER */
 
-.footer{
-  margin-top:1.5rem;
-  color:#17345f;
+.note{
+  margin-top:.5rem;
+  color:#16335f;
+  font-style:italic;
 }
 
-.signature{
+.by-tag{
   margin-top:1rem;
   font-family:'Cormorant Garamond',serif;
-  font-size:1.3rem;
+  font-size:1.2rem;
   opacity:.5;
 }
 
@@ -373,29 +408,19 @@ h1{
 
 body.spain h1,
 body.spain .subtitle,
-body.spain .message p,
-body.spain .music-title,
-body.spain .footer,
-body.spain .signature{
+body.spain .msg-text,
+body.spain .mttl,
+body.spain .note,
+body.spain .by-tag{
   color:#5f0010;
 }
 
-body.spain .slideshow{
-  display:block;
+body.spain .slide-nav{
+  display:flex;
 }
 
-/* MOBILE */
-
-@media(max-width:700px){
-
-  .counter{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .slidebox{
-    min-height:420px;
-  }
-
+body.spain .slideshow-wrap{
+  display:block;
 }
 
 </style>
@@ -413,9 +438,9 @@ body.spain .slideshow{
 
 <div class="page">
 
-  <div class="flags">
+  <div class="flags-row">
     <span>🇦🇷</span>
-    <span class="arrow">→</span>
+    <span class="arr">→</span>
     <span>🇪🇸</span>
   </div>
 
@@ -425,161 +450,289 @@ body.spain .slideshow{
     Una nueva aventura te espera…
   </p>
 
-  <!-- COUNTER -->
+  <!-- CONTADOR -->
 
-  <div class="counter">
+  <div class="counter-wrap">
 
-    <div class="box">
-      <div class="num" id="days">00</div>
-      <div class="lbl">Días</div>
+    <div class="cbox">
+      <div class="cnum" id="dN">0</div>
+      <div class="clbl">Días</div>
     </div>
 
-    <div class="box">
-      <div class="num" id="hours">00</div>
-      <div class="lbl">Horas</div>
+    <div class="cbox">
+      <div class="cnum" id="hN">00</div>
+      <div class="clbl">Horas</div>
     </div>
 
-    <div class="box">
-      <div class="num" id="minutes">00</div>
-      <div class="lbl">Minutos</div>
+    <div class="cbox">
+      <div class="cnum" id="mN">00</div>
+      <div class="clbl">Minutos</div>
     </div>
 
-    <div class="box">
-      <div class="num" id="seconds">00</div>
-      <div class="lbl">Segundos</div>
+    <div class="cbox">
+      <div class="cnum" id="sN">00</div>
+      <div class="clbl">Segundos</div>
     </div>
 
   </div>
 
   <!-- PROGRESS -->
 
-  <div class="progress-wrap">
+  <div class="prog-wrap">
 
-    <div class="progress-bg">
-      <div class="progress-fill" id="progressFill"></div>
+    <div class="prog-bg">
+      <div class="prog-fill" id="pFill"></div>
     </div>
 
-    <div class="progress-labels">
-      <span>25 may 🇦🇷</span>
-      <span id="progressText">0%</span>
-      <span>27 may ✈️</span>
-    </div>
-
-  </div>
-
-  <!-- DAYS -->
-
-  <div class="days">
-
-    <div class="day active">
-      <div class="daynum">25</div>
-      <small>📍</small>
-    </div>
-
-    <div class="day">
-      <div class="daynum">26</div>
-      <small>🧳</small>
-    </div>
-
-    <div class="day final">
-      <div class="daynum">27</div>
-      <small>✈️</small>
+    <div class="prog-labels">
+      <span>Hoy 🇦🇷</span>
+      <span id="pPct">0%</span>
+      <span>27 May ✈️</span>
     </div>
 
   </div>
 
   <!-- SLIDESHOW -->
 
-  <div class="slideshow" id="slideshow">
+  <div class="slideshow-wrap" id="slideshowWrap">
 
-    <div class="slidebox" id="slidebox">
+    <div class="slideshow-box" id="slideshowBox">
+
+      <div class="slide-arrows">
+        <button class="slide-arr" onclick="prevSlide()">‹</button>
+        <button class="slide-arr" onclick="nextSlide()">›</button>
+      </div>
 
     </div>
+
+    <div class="slide-nav" id="slideNav"></div>
 
   </div>
 
   <!-- MESSAGE -->
 
-  <div class="message">
-
-    <p>
+  <div class="msg-card">
+    <p class="msg-text">
       "Que España te reciba con los brazos abiertos,
       que cada calle de Madrid sea un descubrimiento,
       y que te lleves en la valija el amor de todos los
       que se quedan acá. ¡Vas a brillar, amiga! 🌺"
     </p>
-
   </div>
 
   <!-- MUSIC -->
 
-  <div class="music" onclick="toggleMusic()">
+  <div class="music-bar" onclick="toggleMusic()">
 
-    <div class="disc" id="disc">
-      🎵
-    </div>
+    <div class="mdisc" id="mDisc">🎵</div>
 
-    <div>
-      <div class="music-title">
-        Una canción para Maisa 🎶
-      </div>
-
-      <div class="music-sub" id="musicStatus">
-        Tocá para escuchar ▶
-      </div>
+    <div class="minfo">
+      <div class="mttl">Una canción para Maisa 🎶</div>
+      <div class="mart" id="martEl">Tocá para escuchar ▶</div>
     </div>
 
   </div>
 
-  <div class="footer">
+  <p class="note">
     El hogar está donde está el corazón ❤️
-  </div>
+  </p>
 
-  <div class="signature">
+  <p class="by-tag">
     by: sarang ✨
-  </div>
+  </p>
 
 </div>
 
 <audio
-  id="audio"
-  src="audio/musica.mp3"
+  id="bgAudio"
+  loop
   preload="auto"
-  loop>
+  src="audio/musica.mp3">
 </audio>
 
 <script>
 
-/* DATAS */
+/* DATA FINAL */
 
-const startDate = new Date(2026, 4, 25, 0, 0, 0);
 const endDate = new Date(2026, 4, 27, 0, 0, 0);
 
-/* CONTADOR */
+/* FOTOS */
 
-function updateCounter(){
+const CAPTIONS = [
+  '¡El comienzo de algo increíble!',
+  'Madrid te espera ✨',
+  'Una nueva aventura',
+  'Recuerdos para siempre',
+  'Vas a brillar ❤️'
+];
+
+/* SLIDESHOW */
+
+let currentSlide = 0;
+let slideTimer = null;
+
+function buildSlideshow(photoCount){
+
+  const box = document.getElementById('slideshowBox');
+  const nav = document.getElementById('slideNav');
+
+  box.querySelectorAll('.slide').forEach(el=>el.remove());
+
+  nav.innerHTML = '';
+
+  for(let i=0;i<photoCount;i++){
+
+    const slide = document.createElement('div');
+    slide.className = 'slide' + (i===0 ? ' active' : '');
+
+    const img = document.createElement('img');
+
+    const num = String(i+1).padStart(2,'0');
+
+    img.src = `fotos/foto${num}.jpg`;
+
+    img.loading = 'eager';
+
+    slide.appendChild(img);
+
+    const ov = document.createElement('div');
+    ov.className = 'slide-ov';
+
+    slide.appendChild(ov);
+
+    const cap = document.createElement('div');
+    cap.className = 'slide-cap';
+
+    cap.innerHTML = `<div>${CAPTIONS[i] || 'Te queremos ❤️'}</div>`;
+
+    slide.appendChild(cap);
+
+    const n = document.createElement('div');
+    n.className = 'slide-num';
+    n.innerText = `${i+1} / ${photoCount}`;
+
+    slide.appendChild(n);
+
+    box.appendChild(slide);
+
+    const dot = document.createElement('button');
+
+    dot.className = 'slide-dot' + (i===0 ? ' on' : '');
+
+    dot.onclick = ()=>goSlide(i);
+
+    nav.appendChild(dot);
+  }
+
+  if(slideTimer) clearInterval(slideTimer);
+
+  slideTimer = setInterval(nextSlide,5000);
+}
+
+function goSlide(n){
+
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.slide-dot');
+
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('on');
+
+  currentSlide = (n + slides.length) % slides.length;
+
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('on');
+}
+
+function nextSlide(){
+  goSlide(currentSlide+1);
+}
+
+function prevSlide(){
+  goSlide(currentSlide-1);
+}
+
+/* SPAIN MODE */
+
+let spainMode = false;
+
+function activateSpain(){
+
+  if(spainMode) return;
+
+  spainMode = true;
+
+  document.body.classList.add('spain');
+
+  document.getElementById('bgArg').style.opacity = '0';
+
+  const esp = document.getElementById('bgEsp');
+
+  esp.style.opacity = '1';
+
+  document.getElementById('slideshowWrap').style.display = 'block';
+
+  buildSlideshow(5);
+}
+
+/* MUSIC */
+
+let musicOn = false;
+
+function toggleMusic(){
+
+  const audio = document.getElementById('bgAudio');
+
+  const disc = document.getElementById('mDisc');
+
+  if(!musicOn){
+
+    audio.play();
+
+    disc.classList.add('go');
+
+    document.getElementById('martEl').textContent =
+      'tocando... ❚❚';
+
+    musicOn = true;
+
+  } else {
+
+    audio.pause();
+
+    disc.classList.remove('go');
+
+    document.getElementById('martEl').textContent =
+      'Tocá para escuchar ▶';
+
+    musicOn = false;
+  }
+}
+
+/* COUNTER */
+
+function tick(){
 
   const now = new Date();
 
-  const remaining = endDate.getTime() - now.getTime();
+  const rem = endDate.getTime() - now.getTime();
 
-  if(remaining <= 0){
-
-    document.getElementById('days').textContent = '00';
-    document.getElementById('hours').textContent = '00';
-    document.getElementById('minutes').textContent = '00';
-    document.getElementById('seconds').textContent = '00';
-
-    document.getElementById('progressFill').style.width = '100%';
-
-    document.getElementById('progressText').textContent = '100%';
+  if(rem <= 0){
 
     activateSpain();
+
+    document.getElementById('dN').textContent = '0';
+    document.getElementById('hN').textContent = '00';
+    document.getElementById('mN').textContent = '00';
+    document.getElementById('sN').textContent = '00';
+
+    document.getElementById('pFill').style.width = '100%';
+
+    document.getElementById('pPct').textContent = '100%';
 
     return;
   }
 
-  const totalSeconds = Math.floor(remaining / 1000);
+  const totalSeconds = Math.floor(rem / 1000);
 
   const days = Math.floor(totalSeconds / 86400);
 
@@ -589,149 +742,40 @@ function updateCounter(){
 
   const seconds = totalSeconds % 60;
 
-  document.getElementById('days').textContent =
-    String(days).padStart(2,'0');
+  document.getElementById('dN').textContent = days;
 
-  document.getElementById('hours').textContent =
+  document.getElementById('hN').textContent =
     String(hours).padStart(2,'0');
 
-  document.getElementById('minutes').textContent =
+  document.getElementById('mN').textContent =
     String(minutes).padStart(2,'0');
 
-  document.getElementById('seconds').textContent =
+  document.getElementById('sN').textContent =
     String(seconds).padStart(2,'0');
 
-  /* PROGRESSO */
+  /* PROGRESS */
 
-  const totalTime =
-    endDate.getTime() - startDate.getTime();
+  const startDate = new Date(2026, 4, 22, 0, 0, 0);
 
-  const elapsedTime =
-    now.getTime() - startDate.getTime();
+  const total = endDate.getTime() - startDate.getTime();
 
-  const progress =
-    Math.min(100,
-      Math.max(0,
-        (elapsedTime / totalTime) * 100
-      )
-    );
+  const elapsed = now.getTime() - startDate.getTime();
 
-  document.getElementById('progressFill').style.width =
-    progress + '%';
+  const pct = Math.min(
+    100,
+    Math.max(0,(elapsed / total) * 100)
+  );
 
-  document.getElementById('progressText').textContent =
-    Math.floor(progress) + '%';
+  document.getElementById('pFill').style.width =
+    pct + '%';
+
+  document.getElementById('pPct').textContent =
+    Math.floor(pct) + '%';
 }
 
-/* SPAIN MODE */
+tick();
 
-function activateSpain(){
-
-  document.body.classList.add('spain');
-
-  document.getElementById('bgArg').style.opacity = '0';
-
-  document.getElementById('bgEsp').style.opacity = '1';
-
-  document.getElementById('slideshow').style.display = 'block';
-
-  createSlides();
-}
-
-/* SLIDES */
-
-const captions = [
-  'El comienzo de algo increíble ✨',
-  'Madrid te espera ❤️',
-  'Siempre juntas 🌺',
-  'La mejor aventura empieza hoy ✈️',
-  'Vas a brillar muchísimo ⭐'
-];
-
-function createSlides(){
-
-  const slidebox =
-    document.getElementById('slidebox');
-
-  slidebox.innerHTML = '';
-
-  captions.forEach((caption,index)=>{
-
-    const slide =
-      document.createElement('div');
-
-    slide.className =
-      'slide' + (index===0 ? ' active' : '');
-
-    slide.innerHTML = `
-      <img src="fotos/foto0${index+1}.jpg">
-      <div class="caption">${caption}</div>
-    `;
-
-    slidebox.appendChild(slide);
-  });
-
-  let current = 0;
-
-  setInterval(()=>{
-
-    const slides =
-      document.querySelectorAll('.slide');
-
-    slides[current].classList.remove('active');
-
-    current =
-      (current + 1) % slides.length;
-
-    slides[current].classList.add('active');
-
-  },5000);
-}
-
-/* MUSIC */
-
-let playing = false;
-
-function toggleMusic(){
-
-  const audio =
-    document.getElementById('audio');
-
-  const disc =
-    document.getElementById('disc');
-
-  const status =
-    document.getElementById('musicStatus');
-
-  if(!playing){
-
-    audio.play();
-
-    disc.classList.add('playing');
-
-    status.textContent =
-      'tocando... ❚❚';
-
-    playing = true;
-
-  }else{
-
-    audio.pause();
-
-    disc.classList.remove('playing');
-
-    status.textContent =
-      'Tocá para escuchar ▶';
-
-    playing = false;
-  }
-}
-
-/* START */
-
-updateCounter();
-
-setInterval(updateCounter,1000);
+setInterval(tick,1000);
 
 </script>
 
