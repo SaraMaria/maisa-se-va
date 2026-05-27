@@ -2,10 +2,10 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title> Maisa se va! ✈️</title>
+<title>Maisa se va ✈️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
@@ -24,6 +24,7 @@ html,body{
   overflow-x:hidden;
   font-family:'Outfit',sans-serif;
   background:#f5f0e8;
+  scroll-behavior:smooth;
 }
 
 /* BACKGROUND ARG */
@@ -91,7 +92,7 @@ html,body{
   flex-direction:column;
   align-items:center;
   text-align:center;
-  padding:2rem 1rem 3rem;
+  padding:2rem 1rem 4rem;
 }
 
 /* HEADER */
@@ -115,7 +116,7 @@ html,body{
 
 h1{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.3rem,7vw,4.5rem);
+  font-size:clamp(2.4rem,7vw,5rem);
   color:#17345f;
 }
 
@@ -216,6 +217,7 @@ h1{
   border:1px solid rgba(116,172,223,.3);
   color:#17345f;
   box-shadow:0 8px 20px rgba(0,0,0,.08);
+  transition:.3s;
 }
 
 .day.active{
@@ -226,6 +228,11 @@ h1{
 .day.final{
   background:linear-gradient(135deg,#c60b1e,#ffc400);
   color:white;
+  cursor:pointer;
+}
+
+.day.final:hover{
+  transform:scale(1.05);
 }
 
 .daynum{
@@ -299,28 +306,14 @@ h1{
 .letter-button{
   border:none;
   cursor:pointer;
-
   padding:1rem 2rem;
-
   border-radius:999px;
-
   font-size:1rem;
   font-weight:600;
-
   color:white;
-
-  background:
-    linear-gradient(
-      135deg,
-      #c60b1e,
-      #ffc400
-    );
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.12);
-
-  transition:
-    transform .25s ease;
+  background:linear-gradient(135deg,#c60b1e,#ffc400);
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  transition:transform .25s ease;
 }
 
 .letter-button:hover{
@@ -331,7 +324,7 @@ h1{
 
 .slideshow{
   width:100%;
-  max-width:760px;
+  max-width:900px;
   display:none;
   margin-bottom:2rem;
 }
@@ -339,10 +332,9 @@ h1{
 .slidebox{
   position:relative;
   width:100%;
-  aspect-ratio:4/5;
-  min-height:500px;
+  aspect-ratio:16/9;
   overflow:hidden;
-  border-radius:30px;
+  border-radius:32px;
   background:black;
   box-shadow:0 10px 40px rgba(0,0,0,.2);
 }
@@ -351,11 +343,17 @@ h1{
   position:absolute;
   inset:0;
   opacity:0;
-  transition:opacity 1.5s ease-in-out;
+  visibility:hidden;
+  transition:opacity 1.2s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .slide.active{
   opacity:1;
+  visibility:visible;
+  z-index:2;
 }
 
 .slide img{
@@ -372,7 +370,7 @@ h1{
   padding:1.5rem;
   background:linear-gradient(
     to top,
-    rgba(0,0,0,.7),
+    rgba(0,0,0,.75),
     transparent
   );
   color:white;
@@ -380,27 +378,51 @@ h1{
   font-size:1.3rem;
 }
 
+.slide-controls{
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+  margin-top:1rem;
+}
+
+.slide-btn{
+  border:none;
+  cursor:pointer;
+  padding:.9rem 1.2rem;
+  border-radius:999px;
+  background:white;
+  color:#17345f;
+  font-weight:700;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+.slide-counter{
+  margin-top:1rem;
+  color:#17345f;
+  font-weight:600;
+}
+
 /* GUIDE */
 
 .guide{
   width:100%;
-  max-width:760px;
+  max-width:900px;
   display:none;
   flex-direction:column;
-  gap:1rem;
+  gap:1.2rem;
   margin-bottom:2rem;
 }
 
 .guide h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:2rem;
+  font-size:2.3rem;
   color:#5f0010;
 }
 
 .guide-card{
-  background:rgba(255,255,255,.78);
-  padding:1.5rem;
-  border-radius:24px;
+  background:rgba(255,255,255,.82);
+  padding:1.6rem;
+  border-radius:28px;
   text-align:left;
   box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
@@ -408,18 +430,30 @@ h1{
 .guide-card h3{
   margin-bottom:1rem;
   color:#5f0010;
+  font-size:1.3rem;
 }
 
 .guide-card ul{
-  padding-left:1.2rem;
+  padding-left:1.3rem;
 }
 
 .guide-card li{
-  margin-bottom:.6rem;
+  margin-bottom:.7rem;
+  line-height:1.7;
 }
 
 .guide-card p{
-  line-height:1.7;
+  line-height:1.8;
+}
+
+.guide-card a{
+  color:#0f4fa8;
+  text-decoration:none;
+  word-break:break-word;
+}
+
+.guide-card a:hover{
+  text-decoration:underline;
 }
 
 /* MUSIC */
@@ -565,7 +599,15 @@ body.spain .warning{
   }
 
   .slidebox{
-    min-height:420px;
+    aspect-ratio:4/5;
+  }
+
+  .guide-card{
+    padding:1.2rem;
+  }
+
+  .letter-text p{
+    font-size:1.2rem;
   }
 
 }
@@ -647,7 +689,7 @@ body.spain .warning{
       <small>🧳</small>
     </div>
 
-    <div class="day final">
+    <div class="day final" onclick="scrollToGuide()">
       <div class="daynum">27</div>
       <small>✈️</small>
     </div>
@@ -666,10 +708,8 @@ body.spain .warning{
   </div>
 
   <div class="warning">
-
     El 27 de mayo aparecerán nuevas sorpresas
     en esta página... ✨
-
   </div>
 
   <div class="letter-button-wrap" id="letterButtonWrap">
@@ -684,34 +724,227 @@ body.spain .warning{
 
     <div class="slidebox" id="slidebox"></div>
 
+    <div class="slide-controls">
+      <button class="slide-btn" onclick="prevSlide()">⟨ Anterior</button>
+      <button class="slide-btn" onclick="nextSlide()">Siguiente ⟩</button>
+    </div>
+
+    <div class="slide-counter" id="slideCounter">
+      Foto 1 / 38
+    </div>
+
   </div>
 
   <div class="guide" id="guide">
 
-    <h2>Guía para tu nueva aventura 🇪🇸</h2>
+    <h2>🌍 Guía completa para Madrid 🇪🇸</h2>
 
     <div class="guide-card">
 
-      <h3>📍 Lugares para conocer</h3>
+      <h3>🌍 Información general sobre Madrid</h3>
+
+      <p>
+        Capital de España y una de las ciudades más vibrantes de Europa.
+      </p>
+
+      <br>
 
       <ul>
-        <li>Puerta del Sol</li>
-        <li>Gran Vía</li>
-        <li>Parque del Retiro</li>
-        <li>Templo de Debod</li>
-        <li>Plaza Mayor</li>
+        <li>🌸 Mejor época para visitar: primavera y otoño.</li>
+        <li>📍 Barrios recomendados:
+          Malasaña,
+          Chueca,
+          La Latina,
+          Salamanca,
+          Centro / Sol.
+        </li>
+      </ul>
+
+      <br>
+
+      <p><strong>🔗 Enlaces útiles</strong></p>
+
+      <ul>
+        <li>
+          <a href="https://www.esmadrid.com/es" target="_blank">
+            Turismo Oficial de Madrid
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.esmadrid.com/en/maps-and-essential-guides" target="_blank">
+            Mapa turístico oficial
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.esmadrid.com/es/informacion-turistica" target="_blank">
+            Guía oficial de la ciudad
+          </a>
+        </li>
       </ul>
 
     </div>
 
     <div class="guide-card">
 
-      <h3>☕ Cafés y momentos</h3>
+      <h3>🚇 Metro de Madrid</h3>
+
+      <p>
+        Madrid tiene uno de los mejores sistemas de metro de Europa.
+      </p>
+
+      <br>
 
       <ul>
-        <li>Chocolate con churros ☕</li>
-        <li>Tardes en Malasaña ✨</li>
-        <li>Atardecer en Rooftops 🌇</li>
+
+        <li>
+          <a href="https://www.esmadrid.com/en/madrid-metro-map" target="_blank">
+            Mapa oficial del Metro de Madrid (PDF)
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.planometromadrid.org/" target="_blank">
+            Mapa actualizado del metro 2026
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.planometromadrid.org/en-index.php" target="_blank">
+            Mapa interactivo del metro
+          </a>
+        </li>
+
+      </ul>
+
+      <br>
+
+      <p><strong>Consejos rápidos:</strong></p>
+
+      <ul>
+        <li>🚇 El metro funciona aproximadamente de 6:00 a 1:30.</li>
+        <li>🎫 La tarjeta “Multi” es la más utilizada por los turistas.</li>
+        <li>✈️ La línea 8 conecta el aeropuerto con el centro.</li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>📍 Lugares más populares de Madrid</h3>
+
+      <ul>
+        <li>🏛️ Puerta del Sol</li>
+        <li>🏛️ Plaza Mayor</li>
+        <li>🏛️ Palacio Real de Madrid</li>
+        <li>🌳 Parque del Retiro</li>
+        <li>🌆 Gran Vía</li>
+        <li>🖼️ Museo del Prado</li>
+        <li>🌅 Templo de Debod</li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>🍷 Los bares más cool de Madrid</h3>
+
+      <ul>
+        <li>Lovo Cocktail Bar Madrid</li>
+        <li>La Santoría Cocktail Bar</li>
+        <li>Calle 365 l Discoteca Madrid</li>
+        <li>1862 Dry Bar</li>
+        <li>Salmon Guru</li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>🍽️ Restaurantes recomendados</h3>
+
+      <ul>
+        <li>Inclan Brutal Bar</li>
+        <li>Rosi La Loca</li>
+        <li>Los Montes de Galicia</li>
+        <li>Ástor gastro-place</li>
+        <li>El Sur de Moratín</li>
+        <li>Restaurante El Sueño de Carmen</li>
+        <li>CEBO Madrid</li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>☕ Cafés y brunch</h3>
+
+      <ul>
+        <li>Federal Café</li>
+        <li>HanSo Café</li>
+        <li>Café de Oriente</li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>🛍️ Lugares para compras</h3>
+
+      <ul>
+        <li>🛍️ Gran Vía</li>
+        <li>🛒 El Rastro</li>
+        <li>✨ Barrio de Salamanca</li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>🌇 Consejos extra</h3>
+
+      <ul>
+        <li>🌅 Ver el atardecer en el Templo de Debod.</li>
+        <li>🍷 Ir de tapas por La Latina.</li>
+        <li>🏙️ Visitar rooftops:
+          Azotea del Círculo
+          y RIU Plaza España Rooftop.
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>🔗 Enlaces útiles en español</h3>
+
+      <ul>
+
+        <li>
+          <a href="https://www.metromadrid.es/es" target="_blank">
+            Metro de Madrid Oficial
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.esmadrid.com/es" target="_blank">
+            Turismo Madrid
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.esmadrid.com/agenda-madrid" target="_blank">
+            Agenda cultural de Madrid
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.esmadrid.com/en/maps-and-essential-guides" target="_blank">
+            Mapa turístico oficial PDF
+          </a>
+        </li>
+
       </ul>
 
     </div>
@@ -771,81 +1004,15 @@ body.spain .warning{
         Aunque hoy nos separen kilómetros,
         quiero que sepas que hay personas
         que nunca se sienten lejos del corazón.
-        Y vos sos una de ellas.
       </p>
 
       <p>
-        Sos una mujer fuerte, decidida y valiente,
-        de esas que transforman el miedo en camino
-        y los sueños en realidad.
-      </p>
-
-      <p>
-        Emigrar nunca es fácil:
-        hay despedidas,
-        extrañar a la familia,
-        noches difíciles
-        y el peso de empezar de nuevo.
-      </p>
-
-      <p>
-        Pero también hay descubrimientos,
-        encuentros,
-        libertad
-        y la alegría de construir
-        una nueva vida con tus propias manos.
-      </p>
-
-      <p>
-        Migrar es un derecho humano.
-        Es la prueba de que nuestros sueños
-        pueden cruzar fronteras.
-      </p>
-
-      <p>
-        Y al final,
-        el hogar siempre va a estar
-        donde esté nuestro corazón.
-      </p>
-
-      <p>
-        Aun así,
-        quiero que nunca olvides
-        que existe un lugar en el mundo
-        que siempre va a ser tuyo:
-        San Juan,
-        junto a tu familia hermosa,
-        al amor de tus raíces
-        y a las personas
-        que te quieren profundamente.
-      </p>
-
-      <p>
-        La nostalgia va a existir,
-        pero también va a ser
-        un recuerdo de cuánto sos amada.
-      </p>
-
-      <p>
-        Y aunque estés lejos,
-        nunca vas a estar sin hogar.
-      </p>
-
-      <p>
-        Deseo de todo corazón
-        que España te reciba
-        con oportunidades,
-        felicidad
-        y momentos inolvidables.
-      </p>
-
-      <p>
-        Merecés vivir
-        todo aquello que soñaste.
+        Vas a conquistar Madrid,
+        y cada paso va a valer la pena ✨
       </p>
 
       <p class="signature-letter">
-        Con muchísimo cariño y admiración.<br><br>
+        Con muchísimo cariño.<br><br>
         Sara =^.^=
       </p>
 
@@ -876,6 +1043,26 @@ for(let i=1;i<=38;i++){
   });
 
 }
+
+let currentSlide = 0;
+let slideInterval = null;
+let slideshowCreated = false;
+
+/* PRELOAD IMAGES */
+
+function preloadImages(){
+
+  photos.forEach(photo=>{
+
+    const img = new Image();
+
+    img.src = `fotos/${photo.file}`;
+
+  });
+
+}
+
+preloadImages();
 
 function updateCounter(){
 
@@ -916,26 +1103,27 @@ function updateCounter(){
 
   const seconds =
     totalSeconds % 60;
+
   const totalTime =
-  releaseDate.getTime() - startDate.getTime();
+    releaseDate.getTime() - startDate.getTime();
 
-const elapsedTime =
-  now.getTime() - startDate.getTime();
+  const elapsedTime =
+    now.getTime() - startDate.getTime();
 
-const progress =
-  Math.min(
-    100,
-    Math.max(
-      0,
-      (elapsedTime / totalTime) * 100
-    )
-  );
+  const progress =
+    Math.min(
+      100,
+      Math.max(
+        0,
+        (elapsedTime / totalTime) * 100
+      )
+    );
 
-document.getElementById('progressFill').style.width =
-  progress + '%';
+  document.getElementById('progressFill').style.width =
+    progress + '%';
 
-document.getElementById('progressText').textContent =
-  Math.floor(progress) + '%';
+  document.getElementById('progressText').textContent =
+    Math.floor(progress) + '%';
 
   document.getElementById('days').textContent =
     String(days).padStart(2,'0');
@@ -968,7 +1156,14 @@ function activateSpain(){
   document.getElementById('letterButtonWrap').style.display =
     'block';
 
-  createSlides();
+  if(!slideshowCreated){
+
+    createSlides();
+
+    slideshowCreated = true;
+
+  }
+
 }
 
 function createSlides(){
@@ -987,7 +1182,12 @@ function createSlides(){
       'slide' + (index===0 ? ' active' : '');
 
     slide.innerHTML = `
-      <img src="fotos/${photo.file}">
+      <img
+        src="fotos/${photo.file}"
+        loading="lazy"
+        draggable="false"
+      >
+
       <div class="caption">
         ${photo.caption}
       </div>
@@ -997,21 +1197,71 @@ function createSlides(){
 
   });
 
-  let current = 0;
+  updateSlideCounter();
 
-  setInterval(()=>{
+  startSlideshow();
 
-    const slides =
-      document.querySelectorAll('.slide');
+}
 
-    slides[current].classList.remove('active');
+function showSlide(index){
 
-    current =
-      (current + 1) % slides.length;
+  const slides =
+    document.querySelectorAll('.slide');
 
-    slides[current].classList.add('active');
+  slides.forEach(slide=>{
 
-  },4000);
+    slide.classList.remove('active');
+
+  });
+
+  currentSlide =
+    (index + slides.length) % slides.length;
+
+  slides[currentSlide].classList.add('active');
+
+  updateSlideCounter();
+
+}
+
+function nextSlide(){
+
+  showSlide(currentSlide + 1);
+
+  restartInterval();
+
+}
+
+function prevSlide(){
+
+  showSlide(currentSlide - 1);
+
+  restartInterval();
+
+}
+
+function updateSlideCounter(){
+
+  document.getElementById('slideCounter').textContent =
+    `Foto ${currentSlide + 1} / ${photos.length}`;
+
+}
+
+function startSlideshow(){
+
+  slideInterval = setInterval(()=>{
+
+    nextSlide();
+
+  },5000);
+
+}
+
+function restartInterval(){
+
+  clearInterval(slideInterval);
+
+  startSlideshow();
+
 }
 
 let playing = false;
@@ -1048,7 +1298,9 @@ function toggleMusic(){
       'Tocá para escuchar ▶';
 
     playing = false;
+
   }
+
 }
 
 function openLetter(){
@@ -1062,6 +1314,15 @@ function closeLetter(){
 
   document.getElementById('letterModal').style.display =
     'none';
+
+}
+
+function scrollToGuide(){
+
+  document.getElementById('guide')
+    .scrollIntoView({
+      behavior:'smooth'
+    });
 
 }
 
