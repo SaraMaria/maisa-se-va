@@ -11,8 +11,6 @@
 
 <style>
 
-/* RESET */
-
 *{
   margin:0;
   padding:0;
@@ -26,8 +24,6 @@ html,body{
   background:#f5f0e8;
   scroll-behavior:smooth;
 }
-
-/* BACKGROUND ARG */
 
 #bgArg{
   position:fixed;
@@ -59,8 +55,6 @@ html,body{
     );
 }
 
-/* BACKGROUND ESP */
-
 #bgEsp{
   position:fixed;
   inset:0;
@@ -82,8 +76,6 @@ html,body{
   background:#ffc400;
 }
 
-/* PAGE */
-
 .page{
   position:relative;
   z-index:10;
@@ -94,8 +86,6 @@ html,body{
   text-align:center;
   padding:2rem 1rem 4rem;
 }
-
-/* HEADER */
 
 .flags{
   display:flex;
@@ -127,8 +117,6 @@ h1{
   color:#17345f;
   margin-bottom:2rem;
 }
-
-/* COUNTER */
 
 .counter{
   display:grid;
@@ -164,8 +152,6 @@ h1{
   opacity:.75;
 }
 
-/* PROGRESS */
-
 .progress-wrap{
   width:100%;
   max-width:760px;
@@ -185,7 +171,6 @@ h1{
   width:0%;
   border-radius:999px;
   background:linear-gradient(90deg,#74ACDF,#F6B40E);
-  transition:width 1s ease;
 }
 
 .progress-labels{
@@ -195,8 +180,6 @@ h1{
   color:#17345f;
   font-size:.85rem;
 }
-
-/* DAYS */
 
 .days{
   display:flex;
@@ -216,7 +199,6 @@ h1{
   background:rgba(255,255,255,.7);
   border:1px solid rgba(116,172,223,.3);
   color:#17345f;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
 .day.active{
@@ -229,33 +211,21 @@ h1{
   color:white;
 }
 
-.daynum{
-  font-weight:700;
-  font-size:1.1rem;
-}
-
-/* MESSAGE */
-
 .message{
   width:100%;
   max-width:760px;
   background:rgba(255,255,255,.72);
   border-radius:30px;
   padding:2rem;
-  backdrop-filter:blur(12px);
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
   margin-bottom:2rem;
 }
 
 .message p{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.2rem,3vw,1.7rem);
+  font-size:1.5rem;
   line-height:1.8;
   color:#17345f;
-  font-style:italic;
 }
-
-/* WARNING */
 
 .warning{
   width:100%;
@@ -266,22 +236,13 @@ h1{
     rgba(116,172,223,.18),
     rgba(246,180,14,.18)
   );
-  border:1px solid rgba(116,172,223,.25);
   border-radius:24px;
   padding:1.2rem 1.5rem;
   color:#17345f;
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.3rem;
-  line-height:1.7;
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
-  backdrop-filter:blur(10px);
+  font-size:1.2rem;
 }
 
-/* LETTER BUTTON */
-
 .letter-button-wrap{
-  width:100%;
-  max-width:760px;
   display:none;
   margin-bottom:2rem;
 }
@@ -292,13 +253,9 @@ h1{
   padding:1rem 2rem;
   border-radius:999px;
   font-size:1rem;
-  font-weight:600;
   color:white;
   background:linear-gradient(135deg,#c60b1e,#ffc400);
-  box-shadow:0 10px 30px rgba(0,0,0,.12);
 }
-
-/* SLIDESHOW */
 
 .slideshow{
   width:100%;
@@ -314,20 +271,17 @@ h1{
   overflow:hidden;
   border-radius:32px;
   background:black;
-  box-shadow:0 10px 40px rgba(0,0,0,.2);
 }
 
 .slide{
   position:absolute;
   inset:0;
   opacity:0;
-  visibility:hidden;
-  transition:opacity 1.2s ease;
+  transition:opacity 1s ease;
 }
 
 .slide.active{
   opacity:1;
-  visibility:visible;
 }
 
 .slide img{
@@ -341,11 +295,9 @@ h1{
   position:absolute;
   bottom:0;
   width:100%;
-  padding:1.5rem;
-  background:linear-gradient(to top,rgba(0,0,0,.75),transparent);
+  padding:1rem;
+  background:linear-gradient(to top,rgba(0,0,0,.7),transparent);
   color:white;
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.3rem;
 }
 
 .slide-controls{
@@ -357,43 +309,31 @@ h1{
 
 .slide-btn{
   border:none;
-  cursor:pointer;
-  padding:.9rem 1.2rem;
+  padding:1rem;
   border-radius:999px;
-  background:white;
-  color:#17345f;
-  font-weight:700;
+  cursor:pointer;
 }
-
-.slide-counter{
-  margin-top:1rem;
-  color:#17345f;
-  font-weight:600;
-}
-
-/* GUIDE */
 
 .guide{
   width:100%;
   max-width:900px;
   display:none;
   flex-direction:column;
-  gap:1.2rem;
+  gap:1rem;
   margin-bottom:2rem;
 }
 
 .guide h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:2.3rem;
+  font-size:2.4rem;
   color:#5f0010;
 }
 
 .guide-card{
-  background:rgba(255,255,255,.82);
-  padding:1.6rem;
-  border-radius:28px;
+  background:rgba(255,255,255,.85);
+  padding:1.5rem;
+  border-radius:24px;
   text-align:left;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 .guide-card h3{
@@ -420,8 +360,6 @@ h1{
   word-break:break-word;
 }
 
-/* MUSIC */
-
 .music{
   width:100%;
   max-width:760px;
@@ -432,7 +370,6 @@ h1{
   align-items:center;
   gap:1rem;
   cursor:pointer;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 .disc{
@@ -443,30 +380,7 @@ h1{
   align-items:center;
   justify-content:center;
   background:linear-gradient(135deg,#74ACDF,#F6B40E);
-  animation:spin 4s linear infinite paused;
 }
-
-.disc.playing{
-  animation-play-state:running;
-}
-
-@keyframes spin{
-  to{
-    transform:rotate(360deg);
-  }
-}
-
-.music-title{
-  color:#17345f;
-  font-weight:600;
-}
-
-.music-sub{
-  font-size:.85rem;
-  opacity:.7;
-}
-
-/* FOOTER */
 
 .footer{
   margin-top:1.5rem;
@@ -476,68 +390,8 @@ h1{
 .signature{
   margin-top:1rem;
   font-family:'Cormorant Garamond',serif;
-  font-size:1.3rem;
   opacity:.5;
 }
-
-/* LETTER */
-
-.letter-modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:1rem;
-  z-index:9999;
-}
-
-.letter-content{
-  position:relative;
-  width:100%;
-  max-width:760px;
-  max-height:90vh;
-  overflow-y:auto;
-  background:#fffaf3;
-  border-radius:32px;
-  padding:3rem 2rem;
-}
-
-.close-letter{
-  position:absolute;
-  top:1rem;
-  right:1rem;
-  width:42px;
-  height:42px;
-  border:none;
-  border-radius:50%;
-  cursor:pointer;
-  font-size:1.1rem;
-}
-
-.letter-text{
-  text-align:left;
-  font-family:'Cormorant Garamond',serif;
-}
-
-.letter-text h2{
-  text-align:center;
-  margin-bottom:2rem;
-}
-
-.letter-text p{
-  font-size:1.35rem;
-  line-height:2;
-  margin-bottom:1.3rem;
-}
-
-.signature-letter{
-  text-align:right;
-  margin-top:2rem;
-}
-
-/* MOBILE */
 
 @media(max-width:700px){
 
@@ -653,7 +507,7 @@ h1{
 
   <div class="letter-button-wrap" id="letterButtonWrap">
 
-    <button class="letter-button" onclick="openLetter()">
+    <button class="letter-button">
       💌 CARTA
     </button>
 
@@ -666,10 +520,6 @@ h1{
     <div class="slide-controls">
       <button class="slide-btn" onclick="prevSlide()">⟨</button>
       <button class="slide-btn" onclick="nextSlide()">⟩</button>
-    </div>
-
-    <div class="slide-counter" id="slideCounter">
-      Foto 1 / 38
     </div>
 
   </div>
@@ -702,432 +552,148 @@ h1{
         <li>Centro / Sol</li>
       </ul>
 
-    </div>
-<div class="guide" id="guide">
-
-  <h2>🌍 Guía completa para Madrid 🇪🇸</h2>
-
-  <!-- INFORMAÇÕES GERAIS -->
-
-  <div class="guide-card">
-
-    <h3>🌍 Información general sobre Madrid</h3>
-
-    <p>
-      Capital de España y una de las ciudades más vibrantes de Europa.
-    </p>
-
-    <p>
-      Mejor época para visitar: primavera y otoño.
-    </p>
-
-    <h3>📍 Principales barrios para turistas</h3>
-
-    <ul>
-      <li>Malasaña</li>
-      <li>Chueca</li>
-      <li>La Latina</li>
-      <li>Salamanca</li>
-      <li>Centro / Sol</li>
-    </ul>
-
-    <h3>🔗 Enlaces útiles</h3>
-
-    <ul>
-
-      <li>
-        <strong>Turismo Oficial de Madrid</strong><br><br>
-
-        <a
-          href="https://www.esmadrid.com/es"
-          target="_blank">
-          https://www.esmadrid.com/es
-        </a>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Mapa turístico oficial de Madrid</strong><br><br>
-
-        <a
-          href="https://www.esmadrid.com/en/maps-and-essential-guides"
-          target="_blank">
-          https://www.esmadrid.com/en/maps-and-essential-guides
-        </a>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Guía oficial de la ciudad</strong><br><br>
-
-        <a
-          href="https://www.esmadrid.com/es/informacion-turistica"
-          target="_blank">
-          https://www.esmadrid.com/es/informacion-turistica
-        </a>
-      </li>
-
-    </ul>
-
-  </div>
-
-  <!-- METRÔ -->
-
-  <div class="guide-card">
-
-    <h3>🚇 Metro de Madrid</h3>
-
-    <p>
-      Madrid tiene uno de los mejores sistemas de metro de Europa.
-    </p>
-
-    <h3>🗺️ Mapas del metro</h3>
-
-    <ul>
-
-      <li>
-        <strong>Mapa oficial del Metro de Madrid (PDF)</strong><br><br>
-
-        <a
-          href="https://www.esmadrid.com/en/madrid-metro-map"
-          target="_blank">
-          https://www.esmadrid.com/en/madrid-metro-map
-        </a>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Mapa actualizado del metro 2026</strong><br><br>
-
-        <a
-          href="https://www.planometromadrid.org/"
-          target="_blank">
-          https://www.planometromadrid.org/
-        </a>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Mapa interactivo del metro</strong><br><br>
-
-        <a
-          href="https://www.planometromadrid.org/en-index.php"
-          target="_blank">
-          https://www.planometromadrid.org/en-index.php
-        </a>
-      </li>
-
-    </ul>
-
-    <h3>💡 Consejos rápidos</h3>
-
-    <ul>
-      <li>El metro funciona aproximadamente de 6:00 a 1:30.</li>
-      <li>La tarjeta “Multi” es la más utilizada por los turistas.</li>
-      <li>La línea 8 conecta el aeropuerto con el centro.</li>
-    </ul>
-
-  </div>
-
-  <!-- LUGARES -->
-
-  <div class="guide-card">
-
-    <h3>📍 Lugares más populares de Madrid</h3>
-
-    <h3>🏛️ Sitios turísticos imprescindibles</h3>
-
-    <ul>
-
-      <li>
-        <strong>Puerta del Sol</strong><br>
-        Centro histórico de la ciudad.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Plaza Mayor</strong><br>
-        Plaza clásica llena de cafés e historia.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Palacio Real de Madrid</strong><br>
-        El famoso palacio real español.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Parque del Retiro</strong><br>
-        El mejor parque de la ciudad para pasear.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Gran Vía</strong><br>
-        Avenida principal llena de tiendas y vida nocturna.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Museo del Prado</strong><br>
-        Uno de los museos más importantes de Europa.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Templo de Debod</strong><br>
-        El mejor lugar para ver el atardecer.
-      </li>
-
-    </ul>
-
-  </div>
-
-  <!-- BARES -->
-
-  <div class="guide-card">
-
-    <h3>🍷 Los bares más cool de Madrid</h3>
-
-    <p>
-      Cocktail bars y vida nocturna
-    </p>
-
-    <ul>
-
-      <li>
-        <strong>Lovo Cocktail Bar Madrid</strong><br>
-        Cócteles modernos y ambiente elegante.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>La Santoría Cocktail Bar</strong><br>
-        Uno de los bares de cócteles más estilosos del centro.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Calle 365 l Discoteca Madrid</strong><br>
-        Muy popular entre turistas y jóvenes.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>1862 Dry Bar</strong><br>
-        Bar clásico de cócteles artesanales.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Salmon Guru</strong><br>
-        Uno de los bares más premiados de Madrid.
-      </li>
-
-    </ul>
-
-  </div>
-
-  <!-- RESTAURANTES -->
-
-  <div class="guide-card">
-
-    <h3>🍽️ Restaurantes recomendados en Madrid</h3>
-
-    <p>
-      Restaurantes famosos y muy valorados
-    </p>
-
-    <ul>
-
-      <li>
-        <strong>Inclan Brutal Bar</strong><br>
-        Muy famoso por sus tapas y la presentación de los platos.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Rosi La Loca</strong><br>
-        Restaurante muy instagramable y divertido.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Los Montes de Galicia</strong><br>
-        Excelente cocina española y mariscos.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Ástor gastro-place</strong><br>
-        Restaurante moderno y sofisticado.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>El Sur de Moratín</strong><br>
-        Excelente comida tradicional española.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Restaurante El Sueño de Carmen</strong><br>
-        Ambiente acogedor y platos mediterráneos.
-      </li>
-
-      <br>
-
-      <li>
-        <strong>CEBO Madrid</strong><br>
-        Experiencia gastronómica premium.
-      </li>
-
-    </ul>
-
-  </div>
-
-  <!-- CAFÉS -->
-
-  <div class="guide-card">
-
-    <h3>☕ Cafés y brunch</h3>
-
-    <ul>
-      <li>Federal Café</li>
-      <li>HanSo Café</li>
-      <li>Café de Oriente</li>
-    </ul>
-
-  </div>
-
-  <!-- COMPRAS -->
-
-  <div class="guide-card">
-
-    <h3>🛍️ Lugares para compras</h3>
-
-    <ul>
-      <li>Gran Vía</li>
-      <li>El Rastro</li>
-      <li>Barrio de Salamanca</li>
-    </ul>
-
-  </div>
-
-  <!-- DICAS -->
-
-  <div class="guide-card">
-
-    <h3>🌇 Consejos extra</h3>
-
-    <ul>
-
-      <li>
-        Ver el atardecer en el Templo de Debod.
-      </li>
-
-      <li>
-        Ir de tapas por La Latina.
-      </li>
-
-      <li>
-        Visitar rooftops:
-      </li>
+      <h3>🔗 Enlaces útiles</h3>
 
       <ul>
+
+        <li>
+          <strong>Turismo Oficial de Madrid</strong><br><br>
+
+          <a href="https://www.esmadrid.com/es" target="_blank">
+            https://www.esmadrid.com/es
+          </a>
+        </li>
+
+        <br>
+
+        <li>
+          <strong>Mapa turístico oficial de Madrid</strong><br><br>
+
+          <a href="https://www.esmadrid.com/en/maps-and-essential-guides" target="_blank">
+            https://www.esmadrid.com/en/maps-and-essential-guides
+          </a>
+        </li>
+
+        <br>
+
+        <li>
+          <strong>Guía oficial de la ciudad</strong><br><br>
+
+          <a href="https://www.esmadrid.com/es/informacion-turistica" target="_blank">
+            https://www.esmadrid.com/es/informacion-turistica
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>🚇 Metro de Madrid</h3>
+
+      <p>
+        Madrid tiene uno de los mejores sistemas de metro de Europa.
+      </p>
+
+      <h3>💡 Consejos rápidos</h3>
+
+      <ul>
+        <li>El metro funciona aproximadamente de 6:00 a 1:30.</li>
+        <li>La tarjeta “Multi” es la más utilizada por los turistas.</li>
+        <li>La línea 8 conecta el aeropuerto con el centro.</li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>📍 Lugares más populares de Madrid</h3>
+
+      <ul>
+        <li>Puerta del Sol</li>
+        <li>Plaza Mayor</li>
+        <li>Palacio Real de Madrid</li>
+        <li>Parque del Retiro</li>
+        <li>Gran Vía</li>
+        <li>Museo del Prado</li>
+        <li>Templo de Debod</li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>🍷 Los bares más cool de Madrid</h3>
+
+      <ul>
+        <li>Lovo Cocktail Bar Madrid</li>
+        <li>La Santoría Cocktail Bar</li>
+        <li>Calle 365 l Discoteca Madrid</li>
+        <li>1862 Dry Bar</li>
+        <li>Salmon Guru</li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>🍽️ Restaurantes recomendados en Madrid</h3>
+
+      <ul>
+        <li>Inclan Brutal Bar</li>
+        <li>Rosi La Loca</li>
+        <li>Los Montes de Galicia</li>
+        <li>Ástor gastro-place</li>
+        <li>El Sur de Moratín</li>
+        <li>Restaurante El Sueño de Carmen</li>
+        <li>CEBO Madrid</li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>☕ Cafés y brunch</h3>
+
+      <ul>
+        <li>Federal Café</li>
+        <li>HanSo Café</li>
+        <li>Café de Oriente</li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>🛍️ Lugares para compras</h3>
+
+      <ul>
+        <li>Gran Vía</li>
+        <li>El Rastro</li>
+        <li>Barrio de Salamanca</li>
+      </ul>
+
+    </div>
+
+    <div class="guide-card">
+
+      <h3>🌇 Consejos extra</h3>
+
+      <ul>
+        <li>Ver el atardecer en el Templo de Debod.</li>
+        <li>Ir de tapas por La Latina.</li>
         <li>Azotea del Círculo</li>
         <li>RIU Plaza España Rooftop</li>
       </ul>
 
-    </ul>
+    </div>
 
   </div>
 
-  <!-- LINKS FINAIS -->
+  <div class="music">
 
-  <div class="guide-card">
-
-    <h3>🔗 Enlaces útiles en español</h3>
-
-    <ul>
-
-      <li>
-        <strong>Metro de Madrid Oficial</strong><br><br>
-
-        <a
-          href="https://www.metromadrid.es/es"
-          target="_blank">
-          https://www.metromadrid.es/es
-        </a>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Turismo Madrid</strong><br><br>
-
-        <a
-          href="https://www.esmadrid.com/es"
-          target="_blank">
-          https://www.esmadrid.com/es
-        </a>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Agenda cultural de Madrid</strong><br><br>
-
-        <a
-          href="https://www.esmadrid.com/agenda-madrid"
-          target="_blank">
-          https://www.esmadrid.com/agenda-madrid
-        </a>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Mapa turístico oficial PDF</strong><br><br>
-
-        <a
-          href="https://www.esmadrid.com/en/maps-and-essential-guides"
-          target="_blank">
-          https://www.esmadrid.com/en/maps-and-essential-guides
-        </a>
-      </li>
-
-    </ul>
-
-  </div>
-
-</div>
-
-  </div>
-
-  <div class="music" onclick="toggleMusic()">
-
-    <div class="disc" id="disc">
+    <div class="disc">
       🎵
     </div>
 
@@ -1136,7 +702,7 @@ h1{
         Una canción para Maisa 🎶
       </div>
 
-      <div class="music-sub" id="musicStatus">
+      <div class="music-sub">
         Tocá para escuchar ▶
       </div>
     </div>
@@ -1153,20 +719,10 @@ h1{
 
 </div>
 
-<audio
-  id="audio"
-  src="audio/musica.mp3"
-  preload="auto"
-  loop>
-</audio>
-
 <script>
 
 const releaseDate =
   new Date(2026,4,27,6,0,0);
-
-const startDate =
-  new Date(2026,4,25,0,0,0);
 
 const photos = [];
 
@@ -1175,7 +731,6 @@ for(let i=1;i<=38;i++){
   photos.push({
 
     file:`foto${String(i).padStart(2,'0')}.jpg`,
-
     caption:`Recuerdo especial #${i} ✨`
 
   });
@@ -1183,18 +738,6 @@ for(let i=1;i<=38;i++){
 }
 
 let currentSlide = 0;
-let slideInterval = null;
-let slideshowCreated = false;
-
-/* PRELOAD */
-
-photos.forEach(photo=>{
-
-  const img = new Image();
-
-  img.src = `fotos/${photo.file}`;
-
-});
 
 function updateCounter(){
 
@@ -1205,46 +748,10 @@ function updateCounter(){
 
   if(remaining <= 0){
 
-    document.getElementById('days').textContent='00';
-    document.getElementById('hours').textContent='00';
-    document.getElementById('minutes').textContent='00';
-    document.getElementById('seconds').textContent='00';
-
-    document.getElementById('progressFill').style.width='100%';
-
-    document.getElementById('progressText').textContent='100%';
-
     activateSpain();
 
     return;
   }
-
-  const totalSeconds =
-    Math.floor(remaining / 1000);
-
-  const days =
-    Math.floor(totalSeconds / 86400);
-
-  const hours =
-    Math.floor((totalSeconds % 86400) / 3600);
-
-  const minutes =
-    Math.floor((totalSeconds % 3600) / 60);
-
-  const seconds =
-    totalSeconds % 60;
-
-  document.getElementById('days').textContent =
-    String(days).padStart(2,'0');
-
-  document.getElementById('hours').textContent =
-    String(hours).padStart(2,'0');
-
-  document.getElementById('minutes').textContent =
-    String(minutes).padStart(2,'0');
-
-  document.getElementById('seconds').textContent =
-    String(seconds).padStart(2,'0');
 
 }
 
@@ -1260,13 +767,7 @@ function activateSpain(){
 
   document.getElementById('letterButtonWrap').style.display='block';
 
-  if(!slideshowCreated){
-
-    createSlides();
-
-    slideshowCreated = true;
-
-  }
+  createSlides();
 
 }
 
@@ -1286,11 +787,7 @@ function createSlides(){
       'slide' + (index===0 ? ' active' : '');
 
     slide.innerHTML = `
-      <img
-        src="fotos/${photo.file}"
-        loading="lazy"
-      >
-
+      <img src="fotos/${photo.file}">
       <div class="caption">
         ${photo.caption}
       </div>
@@ -1299,8 +796,6 @@ function createSlides(){
     slidebox.appendChild(slide);
 
   });
-
-  startSlideshow();
 
 }
 
@@ -1320,9 +815,6 @@ function showSlide(index){
 
   slides[currentSlide].classList.add('active');
 
-  document.getElementById('slideCounter').textContent =
-    `Foto ${currentSlide + 1} / ${photos.length}`;
-
 }
 
 function nextSlide(){
@@ -1337,58 +829,13 @@ function prevSlide(){
 
 }
 
-function startSlideshow(){
+setInterval(()=>{
 
-  clearInterval(slideInterval);
+  nextSlide();
 
-  slideInterval = setInterval(()=>{
+},5000);
 
-    nextSlide();
-
-  },5000);
-
-}
-
-let playing = false;
-
-function toggleMusic(){
-
-  const audio =
-    document.getElementById('audio');
-
-  const disc =
-    document.getElementById('disc');
-
-  const status =
-    document.getElementById('musicStatus');
-
-  if(!playing){
-
-    audio.play();
-
-    disc.classList.add('playing');
-
-    status.textContent='tocando... ❚❚';
-
-    playing = true;
-
-  }else{
-
-    audio.pause();
-
-    disc.classList.remove('playing');
-
-    status.textContent='Tocá para escuchar ▶';
-
-    playing = false;
-
-  }
-
-}
-
-updateCounter();
-
-setInterval(updateCounter,1000);
+activateSpain();
 
 </script>
 
