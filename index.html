@@ -507,7 +507,7 @@ h1{
 
   <div class="letter-button-wrap" id="letterButtonWrap">
 
-    <button class="letter-button">
+    <button class="letter-button" onclick="openLetter()">
       💌 CARTA
     </button>
 
@@ -525,8 +525,6 @@ h1{
   </div>
 
   <!-- GUIA COMPLETO -->
-
- <!-- SUBSTITUA TODO O BLOCO <div class="guide" id="guide"> ATUAL POR ESTE -->
 
 <div class="guide" id="guide">
 
@@ -659,7 +657,7 @@ h1{
 
     <ul>
       <li>El metro funciona aproximadamente de 6:00 a 1:30.</li>
-      <li>La tarjeta “Multi” es la más utilizada por los turistas.</li>
+      <li>La tarjeta "Multi" es la más utilizada por los turistas.</li>
       <li>La línea 8 conecta el aeropuerto con el centro.</li>
     </ul>
 
@@ -1072,6 +1070,162 @@ setInterval(()=>{
 
 activateSpain();
 
+</script>
+
+<!-- MODAL CARTA -->
+<div class="letter-modal" id="letterModal">
+  <div class="letter-content">
+    <button
+      class="close-letter"
+      onclick="closeLetter()">
+      ✕
+    </button>
+    <div class="letter-text">
+      <h2>Para Maisa 💌</h2>
+      <p>Querida Maisa,</p>
+      <p>
+        Aunque hoy nos separen kilómetros,
+        quiero que sepas que hay personas
+        que nunca se sienten lejos del corazón.
+        Y vos sos una de ellas.
+      </p>
+      <p>
+        Sos una mujer fuerte, decidida y valiente,
+        de esas que transforman el miedo en camino
+        y los sueños en realidad.
+      </p>
+      <p>
+        Emigrar nunca es fácil:
+        hay despedidas,
+        extrañar a la familia,
+        noches difíciles
+        y el peso de empezar de nuevo.
+      </p>
+      <p>
+        Pero también hay descubrimientos,
+        encuentros,
+        libertad
+        y la alegría de construir
+        una nueva vida con tus propias manos.
+      </p>
+      <p>
+        Migrar es un derecho humano.
+        Es la prueba de que nuestros sueños
+        pueden cruzar fronteras.
+      </p>
+      <p>
+        Y al final,
+        el hogar siempre va a estar
+        donde esté nuestro corazón.
+      </p>
+      <p>
+        Aun así,
+        quiero que nunca olvides
+        que existe un lugar en el mundo
+        que siempre va a ser tuyo:
+        San Juan,
+        junto a tu familia hermosa,
+        al amor de tus raíces
+        y a las personas
+        que te quieren profundamente.
+      </p>
+      <p>
+        La nostalgia va a existir,
+        pero también va a ser
+        un recuerdo de cuánto sos amada.
+      </p>
+      <p>
+        Y aunque estés lejos,
+        nunca vas a estar sin hogar.
+      </p>
+      <p>
+        Deseo de todo corazón
+        que España te reciba
+        con oportunidades,
+        felicidad
+        y momentos inolvidables.
+      </p>
+      <p>
+        Merecés vivir
+        todo aquello que soñaste.
+      </p>
+      <p class="signature-letter">
+        Con muchísimo cariño y admiración.<br><br>
+        Sara =^.^=
+      </p>
+    </div>
+  </div>
+</div>
+<style>
+.letter-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+  z-index:99999;
+}
+.letter-content{
+  position:relative;
+  width:100%;
+  max-width:760px;
+  max-height:90vh;
+  overflow-y:auto;
+  background:#fffaf3;
+  border-radius:32px;
+  padding:3rem 2rem;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+.close-letter{
+  position:absolute;
+  top:1rem;
+  right:1rem;
+  width:44px;
+  height:44px;
+  border:none;
+  border-radius:50%;
+  background:#f2e6d4;
+  cursor:pointer;
+  font-size:1.1rem;
+}
+.letter-text{
+  text-align:left;
+  font-family:'Cormorant Garamond',serif;
+  color:#4a1c1c;
+}
+.letter-text h2{
+  text-align:center;
+  margin-bottom:2rem;
+  font-size:2.6rem;
+}
+.letter-text p{
+  font-size:1.45rem;
+  line-height:2;
+  margin-bottom:1.4rem;
+}
+.signature-letter{
+  text-align:right;
+  margin-top:2rem;
+}
+</style>
+<script>
+function openLetter(){
+  document.getElementById('letterModal').style.display =
+    'flex';
+}
+function closeLetter(){
+  document.getElementById('letterModal').style.display =
+    'none';
+}
+window.addEventListener('click',function(e){
+  const modal =
+    document.getElementById('letterModal');
+  if(e.target === modal){
+    closeLetter();
+  }
+});
 </script>
 
 </body>
